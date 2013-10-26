@@ -1,10 +1,13 @@
-module.exports = (clone, src, dest, sandbox) ->
+path = require 'path'
+
+module.exports = (clone, src, dest, sandbox, next) ->
 
   {jslang} = sandbox
 
   if jslang is "coffee"
-    console.log "coffee"
-    console.log clone, src, dest, sandbox
-    #clone coffeedir, dest, sandbox
+    
+    src = path.join src, "coffee"
+    clone src, dest, sandbox, next
+
   else
     console.log "js"
