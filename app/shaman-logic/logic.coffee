@@ -1,3 +1,10 @@
-module.exports = 
+module.exports = (clone, src, dest, sandbox) ->
 
-  console.log "IF !!!"
+  {jslang} = sandbox
+
+  if jslang is "coffee"
+    console.log "coffee"
+    console.log clone, src, dest, sandbox
+    #clone coffeedir, dest, sandbox
+  else
+    console.log "js"
